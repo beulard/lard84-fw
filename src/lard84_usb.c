@@ -1,4 +1,10 @@
 
+/*
+** file: lard84_keymatrix.h
+** author: beulard (Matthias Dubouchet)
+** creation date: 09/05/2025
+*/
+
 #include "class/hid/hid.h"
 #include <pico/stdlib.h>
 #include <stdio.h>
@@ -22,7 +28,7 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id,
     if (kbd_leds & KEYBOARD_LED_CAPSLOCK) {
       printf("CAPSLOCK ON\n");
     } else {
-      printf("CAPSLOCKd OFF\n");
+      printf("CAPSLOCK OFF\n");
     }
   }
 }
@@ -44,7 +50,7 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id,
 }
 
 #define USB_VID 0xcafe
-#define USB_PID 0xdeca
+#define USB_PID 0x0084
 #define USB_BCD 0x0200
 
 //--------------------------------------------------------------------+

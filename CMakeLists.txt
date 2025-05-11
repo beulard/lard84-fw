@@ -35,7 +35,12 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(lard84-fw src/lard84_main.c src/lard84_usb.c)
+add_executable(lard84-fw src/lard84_main.c src/lard84_usb.c src/lard84_keymatrix.c src/lard84_keycodes.c)
+
+target_compile_definitions(lard84-fw PRIVATE
+    PICO_DEFAULT_UART_TX_PIN=12
+    PICO_DEFAULT_UART_RX_PIN=13
+)
 
 pico_set_program_name(lard84-fw "lard84-fw")
 pico_set_program_version(lard84-fw "0.1")
